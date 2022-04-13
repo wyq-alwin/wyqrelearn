@@ -7,4 +7,4 @@ git conflict
 1
 2
 3
-rebase 1
+rebase 2
