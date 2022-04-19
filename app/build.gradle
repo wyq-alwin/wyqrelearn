@@ -88,3 +88,11 @@ dependencies {
     implementation 'com.rengwuxian.materialedittext:library:2.1.4'
     implementation "org.jetbrains.kotlin:kotlin-reflect:1.5.31"
 }
+
+
+task printStringClass{
+    def str1 = '单引号'
+    def str2 = "双引号"
+
+    
+}

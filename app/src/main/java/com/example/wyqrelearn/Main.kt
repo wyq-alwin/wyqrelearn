@@ -1,5 +1,7 @@
 package com.example.wyqrelearn
 
+import java.util.*
+
 
 //class ListNode(var `val`: Int) {
 //    var next: ListNode? = null
@@ -79,16 +81,39 @@ operator fun Salary.minus(other: Salary): Salary {
 }
 
 fun main() {
-    val s1 = Salary(1)
-    val s2 = Salary(2)
-    println(s1 + s2)
-    println(s1 - s2)
-
-    val map = mapOf(
-        "java" to 1,
-        "kotlin" to 2,
-        "python" to 3
-    ).withDefault { "?" }
+    Solution().sortColors(intArrayOf(2,0,2,1,1,0))
 }
 
+class Solution {
+    fun sortColors(nums: IntArray): Unit {
+        var left = 0
+        var right = nums.lastIndex
+        var cur = 0
+        while (cur <= right) {
+            when (nums[cur]) {
+                0 -> {
+                    swap(nums, left, cur)
+                    left++
+                    cur++
+                }
+                1 -> {
+                    cur++
+                }
+                2 -> {
+                    swap(nums,cur,right)
+                    right--
+                }
+            }
+        }
+//        println(nums.contentToString())
+    }
 
+    private fun swap(nums: IntArray, i: Int, j: Int) {
+        if (i == j){
+            return
+        }
+        val temp = nums[i]
+        nums[i] = nums[j]
+        nums[j] = temp
+    }
+}
