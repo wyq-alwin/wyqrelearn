@@ -1,0 +1,34 @@
+//repositories {
+//    google()
+//    jcenter()
+//}
+//plugins {
+//    id 'groovy-library'
+//}
+//
+//groovy {
+//    sourceCompatibility = JavaVersion.VERSION_1_8
+//    targetCompatibility = JavaVersion.VERSION_1_8
+//}
+apply plugin: 'groovy'
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+dependencies {
+    // 包含了AMS字节码注入工具
+    implementation 'com.android.tools.build:gradle:4.1.0'
+    implementation gradleApi()
+}
+
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
