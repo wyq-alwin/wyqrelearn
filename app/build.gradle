@@ -81,5 +81,5 @@ dependencies {
     kapt "com.google.dagger:hilt-compiler:2.40.1"
 
     implementation 'com.rengwuxian.materialedittext:library:2.1.4'
-    implementation "org.jetbrains.kotlin:kotlin-reflect:1.6.10"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:1.5.31"
 }
