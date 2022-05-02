@@ -7,6 +7,7 @@ import android.util.TypedValue
 
 fun Any.applicationContext() = MainApplication.context
 
+// 这种实现可能不准确
 val Int.dp2px
     get() = TypedValue.applyDimension(
         TypedValue.COMPLEX_UNIT_DIP,
