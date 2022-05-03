@@ -15,7 +15,8 @@ private val HORIZONTAL_OFFSET = 5.dp2px
 private val VERTICAL_OFFSET = 20.dp2px
 private val EXTRA_VERTICAL_OFFSET = 20.dp2px
 
-class MaterialEditText : androidx.appcompat.widget.AppCompatEditText {
+class MaterialEditText:
+    androidx.appcompat.widget.AppCompatEditText{
 
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         textSize = TEXT_SIZE

@@ -22,35 +22,10 @@ class MyView : View {
     constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int)
             : super(context, attrs, defStyleAttr)
 
-    override fun onDraw(canvas: Canvas) {
-        canvas.save()
-        canvas.translate(BITMAP_PADDING + BITMAP_WIDTH / 2, BITMAP_PADDING + BITMAP_WIDTH / 2)
-        canvas.rotate(-30f)
-        canvas.clipRect(
-            -BITMAP_WIDTH,
-            -BITMAP_WIDTH,
-            BITMAP_WIDTH,
-            0f
-        )
-        canvas.rotate(30f)
-        canvas.translate(-(BITMAP_PADDING + BITMAP_WIDTH / 2), -(BITMAP_PADDING + BITMAP_WIDTH / 2))
-        canvas.drawBitmap(getAvatar(BITMAP_WIDTH.toInt()), BITMAP_PADDING, BITMAP_PADDING, paint)
-        canvas.restore()
+    private val bitmap = getAvatar(BITMAP_WIDTH.toInt())
 
-        canvas.save()
-        canvas.translate(BITMAP_PADDING + BITMAP_WIDTH / 2, BITMAP_PADDING + BITMAP_WIDTH / 2)
-        canvas.rotate(-30f)
-        camera.applyToCanvas(canvas)
-        canvas.clipRect(
-            -BITMAP_WIDTH,
-            0f,
-            BITMAP_WIDTH,
-            BITMAP_WIDTH
-        )
-        canvas.rotate(30f)
-        canvas.translate(-(BITMAP_PADDING + BITMAP_WIDTH / 2), -(BITMAP_PADDING + BITMAP_WIDTH / 2))
-        canvas.drawBitmap(getAvatar(BITMAP_WIDTH.toInt()), BITMAP_PADDING, BITMAP_PADDING, paint)
-        canvas.restore()
+    override fun onDraw(canvas: Canvas) {
+        canvas.drawBitmap(bitmap, BITMAP_PADDING, BITMAP_PADDING, paint)
     }
 
     fun getAvatar(width: Int): Bitmap {
